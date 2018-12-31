@@ -1,6 +1,6 @@
 ---
 title: Vue同时使用@keyup.enter与@blur冲突
-tags: [Vue, 坑]
+tags: [Vue, 踩坑]
 archives_title: Archives
 categories: JavaScript
 date: 2018-08-30

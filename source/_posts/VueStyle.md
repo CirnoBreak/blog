@@ -1,6 +1,6 @@
 ---
 title: Vue坑之style设置为scoped后样式无法修改
-tags: [Vue, 坑]
+tags: [Vue, 踩坑]
 archives_title: Archives
 categories: JavaScript
 date: 2018-03-30
