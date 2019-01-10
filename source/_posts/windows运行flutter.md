@@ -40,6 +40,11 @@ set FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 假如需要安装新的SDK，只需要在对应的SDK打上勾后点OK即可。
 
+## 配置 Android SDK 环境变量
+
+在上述的配置环境变量界面，同样是在 `xxx 的用户变量`下面，点击 `新建`，新建一个名为`ANDROID_HOME`的环境变量，然后路径是你Android SDK的路径(可通过浏览文件选择)，比如: `F:\Android\sdk`。
+![asdk](./Flutter/asdk.png)
+
 # 新建一个Flutter项目
 
 ## 使用Android Studio 创建
