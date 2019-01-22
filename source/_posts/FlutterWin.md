@@ -36,14 +36,14 @@ set FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 根据提示直接安装到完成，然后打开Android Studio，如果是第一次安装，可能会提示你缺少SDK，这是会让你选择下载SDK的目录并开始下载(Android SDK的谷歌镜像速度还是蛮快的，如果觉得慢可以尝试使用国内Android Studio SDK镜像),目录尽量不要选择C盘(由于SDK巨大，之前选择SDK装在C盘，装了几个之后被占了几十G)，可以选择你自己喜欢的地方。
 
 当SDK下载完之后，可以进入Android Studio的欢迎界面，点击右下角的configure -> SDK Manager 可以进入SDK管理界面。进入界面之后可以看到你SDK的安装情况，以及该SDK的详情(需要点击右下方的Show Package Detail)。
-![SDK Manager](./Flutter/SDKMAN.png)
+{% asset_img SDKMAN.png sdkman %}
 
 假如需要安装新的SDK，只需要在对应的SDK打上勾后点OK即可。
 
 ## 配置 Android SDK 环境变量
 
 在上述的配置环境变量界面，同样是在 `xxx 的用户变量`下面，点击 `新建`，新建一个名为`ANDROID_HOME`的环境变量，然后路径是你Android SDK的路径(可通过浏览文件选择)，比如: `F:\Android\sdk`。
-![asdk](./Flutter/asdk.png)
+{% asset_img asdk.png asdk %}
 
 # 新建一个Flutter项目
 
@@ -58,10 +58,10 @@ set FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 # 运行Android Studio的虚拟机(AVD)
 
 在Android Studio打开任意项目，打开后在右上角找到`AVD Manager`，
-![AVD](./Flutter/AVD.png)
+{% asset_img AVD.png AVD %}
 点击进入，此时可以点击`Create Virtual Device`来创建虚拟机，根据自己的需求来选择对应型号的虚拟机,选择后点击next，会进入`System Image(系统镜像)`选择界面，(由于这里我之前试过被墙，一直转圈无法加载，这种情况出现时需要科学上网),选择对应的安卓系统镜像后(假如没有需要下载)，点next，编辑好参数后点finish即可。
 虚拟机安装完成之后，`AVD Manager`里面会成功显示你安装好的虚拟机，此时点击`Actions`下的绿色按钮即可运行虚拟机。
-![runavd](./Flutter/runavd.png)
+{% asset_img runavd.png runavd %}
 第一次加载需要漫长的加载，请耐心等待。
 
 # 运行Flutter 项目
@@ -76,4 +76,4 @@ Flutter项目主要运行的是lib文件夹下的main.dart，同时确保真机/
 
 
 首先运行虚拟机或者连接真机，然后点击 Android Studio 上方的绿色播放按钮即可。
-![runapp](./Flutter/runapp.png)
+{% asset_img runapp.png runapp %}

@@ -45,7 +45,7 @@ MutationObserver API的特点:
 })();
 ```
 此时，随意在b站打开一个视频，并确保播放器切换到新版的情况下，用`cmd/ctrl + shift + j` 打开控制台，等待`div.damaku-wrap`渲染后会看到以下输出:
-![danmaku1](./MutationObserver/danmaku1.png)
+{% asset_img danmaku1.png danmaku1 %}
 
 由于以上代码设置了监听元素style跟DOM树元素增删变化，所以会看到关于两者变化的相关输出动作，这些动作都存放在mutationList数组里。
 
@@ -77,12 +77,12 @@ MutationObserver API的特点:
 ```
 
 继续刷新页面，等待输出。输出结果如下:
-![danmaku2](./MutationObserver/danmaku2.png)
+{% asset_img danmaku2.png danmaku2 %}
 
 此时我们可以看到每次DOM结点变动的详细信息，但是我们又该怎么知道到底什么时候才渲染出弹幕列表(-_-)ゞ？
 
 此时我们使用了`Chrome Dev Tools` 的 `Inspector` 找到了弹幕列表body的相应元素`div.bui-collapse-body`。
-![danmaku2](./MutationObserver/danmaku3.png)
+{% asset_img danmaku3.png danmaku3 %}
 好了，现在找到了主要目标，但是接下来又该怎么做？
 
 我们再次修改代码，此时我们主要是看在这个变动列表里面，何时才会渲染出`div.player-auxiliary`。
@@ -112,11 +112,11 @@ MutationObserver API的特点:
 ```
 
 再次刷新，我们从控制台可以看出来，在第二次dom变动的时候渲染出了`div.player-auxiliary`。
-![danmaku2](./MutationObserver/danmaku4.png)
+{% asset_img danmaku4.png danmaku4 %}
 但并不是永远是第二次，在我调试的时候，有视频选集的页面可能并不会是第二次，所以我们继续寻找线索。
 
 展开第二次输出的信息，我们把`player-auxiliary`字符串以及它是`class`作为线索，轻易的找到了它所在的位置：
-![danmaku2](./MutationObserver/danmaku5.png)
+{% asset_img danmaku5.png danmaku5 %}
 它就在`mutation.target.classList`里，此时使用value属性做判断条件比较简单，再次修改下代码：
 ```js
 (function () {
@@ -145,7 +145,7 @@ MutationObserver API的特点:
 ```
 
 我们再回来看看 console ，发现自从找到它之后，每次都会输出true。
-![danmaku2](./MutationObserver/danmaku6.png)
+{% asset_img danmaku6.png danmaku6 %}
 该如何避免频繁的判断?
 
 此时借助flag，当flag为true后就不再输出found。来让它找到之后就不再执行。
@@ -180,7 +180,7 @@ MutationObserver API的特点:
 })();
 ```
 从输出结果可以看出found现在找到之后就不再执行了。
-![danmaku2](./MutationObserver/danmaku7.png)
+{% asset_img danmaku7.png danmaku7 %}
 
 最后，实现弹幕列表自动展开这功能就很简单了，只需要在if 判断里面执行 弹幕列表 header 的click事件即可。代码整理一下，最终的函数如下。
 ```js
