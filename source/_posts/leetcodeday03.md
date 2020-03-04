@@ -8,7 +8,7 @@ date: 2020-03-03
 
 # 题目地址
 
-https://leetcode-cn.com/problems/sorted-merge-lcci/
+[https://leetcode-cn.com/problems/sorted-merge-lcci/](https://leetcode-cn.com/problems/rotting-oranges/)
 
 # 题目描述
 
