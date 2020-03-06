@@ -58,7 +58,7 @@ date: 2020-03-04
 3. 开始遍历 indexQueue，每次取出 indexQueue 第一个对应的值的下标，开始感染(四个方向都感染)。如果遇到新鲜的橘子，把该橘子的下标存进新的队列 newIndexQueue 提供后续遍历感染并把对应的值赋值为2，同时新鲜橘子的数量 - 1，一轮结束 mins + 1，把 newIndexQueue 赋值给indexQueue，开始新一轮的感染。
 4. 最后，如果还有新鲜的橘子(freshNum > 0)，返回 -1，否则返回感染过程的分钟数 mins。
 
-引用一下其中一个 leetcode 题解的动图：
+引用一下其中一个 leetcode 题解的动图 [link](https://leetcode-cn.com/problems/rotting-oranges/solution/yan-du-you-xian-sou-suo-python3-c-by-z1m/)：
 
 ![](https://pic.leetcode-cn.com/aec044437ac27b8e23ba0d8f07daac230e6e0c0671fcd6a68f8884b991b4e1cf-0994.gif)
 
