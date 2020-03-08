@@ -47,6 +47,7 @@ date: 2020-03-07
 
 ![](https://pic.leetcode-cn.com/9d038fc9bca6db656f81853d49caccae358a5630589df304fc24d8999777df98-fig3.gif)
 
+**代码:**
 ```javascript
 var MaxQueue = function() {
   // 原始队列，只处理进队出队
