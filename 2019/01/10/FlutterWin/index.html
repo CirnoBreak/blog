@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'true', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>windows系统安装Android Studio和配置Flutter | Welcome to my blog!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Flutter">
+    <meta name="description" content="Flutter 是谷歌开源的，一个全新的移动 UI 框架，在 2018 年 12 月初发布了 1.0 正式版本，由于本人是做前端开发的，对原生开发不太了解，想从 Flutter 开始入手，但是，在环境配置方面并不是那么的顺利，期间也踩了不少坑。由于环境是 Flutter1.0 发布不久后才部署好的，现在只能考记忆来回顾环境配置的过程。 需要下载的工具 Android Studio(需要科学上网):">
+<meta property="og:type" content="article">
+<meta property="og:title" content="windows系统安装Android Studio和配置Flutter">
+<meta property="og:url" content="https://cirnobreak.github.io/2019/01/10/FlutterWin/index.html">
+<meta property="og:site_name" content="Welcome to my blog!">
+<meta property="og:description" content="Flutter 是谷歌开源的，一个全新的移动 UI 框架，在 2018 年 12 月初发布了 1.0 正式版本，由于本人是做前端开发的，对原生开发不太了解，想从 Flutter 开始入手，但是，在环境配置方面并不是那么的顺利，期间也踩了不少坑。由于环境是 Flutter1.0 发布不久后才部署好的，现在只能考记忆来回顾环境配置的过程。 需要下载的工具 Android Studio(需要科学上网):">
+<meta property="og:image" content="https://cirnobreak.github.io/blog/2019/01/10/FlutterWin/SDKMAN.png">
+<meta property="og:image" content="https://cirnobreak.github.io/blog/2019/01/10/FlutterWin/asdk.png">
+<meta property="og:image" content="https://cirnobreak.github.io/blog/2019/01/10/FlutterWin/AVD.png">
+<meta property="og:image" content="https://cirnobreak.github.io/blog/2019/01/10/FlutterWin/runavd.png">
+<meta property="og:image" content="https://cirnobreak.github.io/blog/2019/01/10/FlutterWin/runapp.png">
+<meta property="article:published_time" content="2019-01-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-03-07T14:02:25.835Z">
+<meta property="article:tag" content="Flutter">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cirnobreak.github.io/blog/2019/01/10/FlutterWin/SDKMAN.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Welcome to my blog!" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="/blog/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname"></h5>
+          <a href="mailto:" title="" class="mail"></a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives/"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags/"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories/"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/cirnobreak" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">windows系统安装Android Studio和配置Flutter</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">windows系统安装Android Studio和配置Flutter</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-09T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-01-10
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/Flutter/">Flutter</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#需要下载的工具"><span class="post-toc-number">1.</span> <span class="post-toc-text">需要下载的工具</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#设置-Flutter-SDK-环境变量"><span class="post-toc-number">2.</span> <span class="post-toc-text">设置 Flutter SDK 环境变量</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#设置-Flutter-SDK-镜像"><span class="post-toc-number">3.</span> <span class="post-toc-text">设置 Flutter SDK 镜像</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#运行-Flutter-Doctor"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">运行 Flutter Doctor</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装-Android-Studio"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装 Android Studio</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置-Android-SDK-环境变量"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">配置 Android SDK 环境变量</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#新建一个-Flutter-项目"><span class="post-toc-number">5.</span> <span class="post-toc-text">新建一个 Flutter 项目</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用-Android-Studio-创建"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">使用 Android Studio 创建</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用-Visual-Studio-Code-创建"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">使用 Visual Studio Code 创建</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#运行-Android-Studio-的虚拟机-AVD"><span class="post-toc-number">6.</span> <span class="post-toc-text">运行 Android Studio 的虚拟机(AVD)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#运行-Flutter-项目"><span class="post-toc-number">7.</span> <span class="post-toc-text">运行 Flutter 项目</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Visual-Studio-Code-运行"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">Visual Studio Code 运行</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Android-Studio-运行"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">Android Studio 运行</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-FlutterWin"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">windows系统安装Android Studio和配置Flutter</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-10 00:00:00" datetime="2019-01-09T16:00:00.000Z"  itemprop="datePublished">2019-01-10</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/Flutter/">Flutter</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>Flutter 是谷歌开源的，一个全新的移动 UI 框架，在 2018 年 12 月初发布了 1.0 正式版本，由于本人是做前端开发的，对原生开发不太了解，想从 Flutter 开始入手，但是，在环境配置方面并不是那么的顺利，期间也踩了不少坑。由于环境是 Flutter1.0 发布不久后才部署好的，现在只能考记忆来回顾环境配置的过程。</p>
+<h1 id="需要下载的工具"><a href="#需要下载的工具" class="headerlink" title="需要下载的工具"></a>需要下载的工具</h1><ol>
+<li>Android Studio(需要科学上网): <a href="https://developer.android.com/studio/" target="_blank" rel="noopener">https://developer.android.com/studio/</a></li>
+<li>Flutter SDK 1.0 稳定版 <a href="https://storage.googleapis.com/flutter_infra/releases/stable/windows/flutter_windows_v1.0.0-stable.zip" target="_blank" rel="noopener">https://storage.googleapis.com/flutter_infra/releases/stable/windows/flutter_windows_v1.0.0-stable.zip</a></li>
+</ol>
+<h1 id="设置-Flutter-SDK-环境变量"><a href="#设置-Flutter-SDK-环境变量" class="headerlink" title="设置 Flutter SDK 环境变量"></a>设置 Flutter SDK 环境变量</h1><p>把下载好的<code>Flutter SDK</code>放到任意你觉得方便的位置，解压。然后右键 此电脑，选择属性，依次点击 高级系统设置 -&gt; 环境变量，双击 <code>xxx 的用户变量</code> 下面的<code>path</code>，点新建，然后输入你 Flutter SDK 所在的目录，比如我的 Flutter SDK 是放在 C 盘下的 src，则要输入 C:\src\flutter\bin，其他位置同理，记得一定是定位到<code>bin</code>下面。</p>
+<h1 id="设置-Flutter-SDK-镜像"><a href="#设置-Flutter-SDK-镜像" class="headerlink" title="设置 Flutter SDK 镜像"></a>设置 Flutter SDK 镜像</h1><p>在终端(cmd/powershell)下面输入以下命令:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> PUB_HOSTED_URL=https://pub.flutter-io.cn</span><br><span class="line"><span class="built_in">set</span> FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn</span><br></pre></td></tr></table></figure>
+
+<p>即可,详细参考<a href="https://flutter.io/community/china" target="_blank" rel="noopener">https://flutter.io/community/china</a></p>
+<h2 id="运行-Flutter-Doctor"><a href="#运行-Flutter-Doctor" class="headerlink" title="运行 Flutter Doctor"></a>运行 Flutter Doctor</h2><p>打开一个新的 cmd 或 PowerShell，输入 flutter doctor 来运行，flutter doctor 是拿来检测你缺少哪些依赖，一般此时会显示你缺少(虚拟/真实)设备，那此时就需要 Android Studio 的模拟器或者你自己的手机(安卓机)。</p>
+<h1 id="安装-Android-Studio"><a href="#安装-Android-Studio" class="headerlink" title="安装 Android Studio"></a>安装 Android Studio</h1><p>根据提示直接安装到完成，然后打开 Android Studio，如果是第一次安装，可能会提示你缺少 SDK，这是会让你选择下载 SDK 的目录并开始下载(Android SDK 的谷歌镜像速度还是蛮快的，如果觉得慢可以尝试使用国内 Android Studio SDK 镜像),目录尽量不要选择 C 盘(由于 SDK 巨大，之前选择 SDK 装在 C 盘，装了几个之后被占了几十 G)，可以选择你自己喜欢的地方。</p>
+<p>当 SDK 下载完之后，可以进入 Android Studio 的欢迎界面，点击右下角的 configure -&gt; SDK Manager 可以进入 SDK 管理界面。进入界面之后可以看到你 SDK 的安装情况，以及该 SDK 的详情(需要点击右下方的 Show Package Detail)。</p>
+<img src="/blog/2019/01/10/FlutterWin/SDKMAN.png" class="" title="sdkman">
+
+<p>假如需要安装新的 SDK，只需要在对应的 SDK 打上勾后点 OK 即可。</p>
+<h2 id="配置-Android-SDK-环境变量"><a href="#配置-Android-SDK-环境变量" class="headerlink" title="配置 Android SDK 环境变量"></a>配置 Android SDK 环境变量</h2><p>在上述的配置环境变量界面，同样是在 <code>xxx 的用户变量</code>下面，点击 <code>新建</code>，新建一个名为<code>ANDROID_HOME</code>的环境变量，然后路径是你 Android SDK 的路径(可通过浏览文件选择)，比如: <code>F:\Android\sdk</code>。</p>
+<img src="/blog/2019/01/10/FlutterWin/asdk.png" class="" title="asdk">
+
+<h1 id="新建一个-Flutter-项目"><a href="#新建一个-Flutter-项目" class="headerlink" title="新建一个 Flutter 项目"></a>新建一个 Flutter 项目</h1><h2 id="使用-Android-Studio-创建"><a href="#使用-Android-Studio-创建" class="headerlink" title="使用 Android Studio 创建"></a>使用 Android Studio 创建</h2><p>在 Android Studio 的 欢迎界面 ，也就是一开始的界面，点击 <code>Start a new Flutter project</code>后，进入 <code>Create New Flutter Project</code>的界面后有三个选项，点击第一个<code>Flutter Application</code>后点击 next 此时会让你输入项目名称、项目描述，还有 Flutter SDK 的路径和项目位置的选择，自定义结束后点击 next，后面是包名的配置，定义结束后按 Finish 完成项目创建。</p>
+<h2 id="使用-Visual-Studio-Code-创建"><a href="#使用-Visual-Studio-Code-创建" class="headerlink" title="使用 Visual Studio Code 创建"></a>使用 Visual Studio Code 创建</h2><p>在打开 Visual Studio Code 的情况下，按下组合键 <code>ctrl + shift + x</code>，或者直接点开左边活动栏第四个按钮(拓展)，在应用商店搜索并安装<code>Dart</code>和<code>Flutter</code>插件，插件安装完成后重启 Visual Studio Code。此时在 Visual Studio Code 按下组合键 <code>ctrl + shift + p</code>，输入 Flutter，点击<code>Flutter:New Project</code>，他会让你输入项目名字，比如可以输入 my_app 并按下回车来新建一个叫 my_app 的项目，此时会让你选择该项目的路径，选择完成确定后等待即可。</p>
+<h1 id="运行-Android-Studio-的虚拟机-AVD"><a href="#运行-Android-Studio-的虚拟机-AVD" class="headerlink" title="运行 Android Studio 的虚拟机(AVD)"></a>运行 Android Studio 的虚拟机(AVD)</h1><p>在 Android Studio 打开任意项目，打开后在右上角找到<code>AVD Manager</code>，</p>
+<img src="/blog/2019/01/10/FlutterWin/AVD.png" class="" title="AVD">
+<p>点击进入，此时可以点击<code>Create Virtual Device</code>来创建虚拟机，根据自己的需求来选择对应型号的虚拟机,选择后点击 next，会进入<code>System Image(系统镜像)</code>选择界面，(由于这里我之前试过被墙，一直转圈无法加载，这种情况出现时需要科学上网),选择对应的安卓系统镜像后(假如没有需要下载)，点 next，编辑好参数后点 finish 即可。<br>虚拟机安装完成之后，<code>AVD Manager</code>里面会成功显示你安装好的虚拟机，此时点击<code>Actions</code>下的绿色按钮即可运行虚拟机。</p>
+<img src="/blog/2019/01/10/FlutterWin/runavd.png" class="" title="runavd">
+<p>第一次加载需要漫长的加载，请耐心等待。</p>
+<h1 id="运行-Flutter-项目"><a href="#运行-Flutter-项目" class="headerlink" title="运行 Flutter 项目"></a>运行 Flutter 项目</h1><p>Flutter 项目主要运行的是 lib 文件夹下的 main.dart，同时确保真机/模拟器打开。</p>
+<h2 id="Visual-Studio-Code-运行"><a href="#Visual-Studio-Code-运行" class="headerlink" title="Visual Studio Code 运行"></a>Visual Studio Code 运行</h2><p>首先运行虚拟机或者连接真机，然后在 Visual Studio Code 下点开当前项目 lib 文件夹下的 main.dart，按下 F5 即可。</p>
+<h2 id="Android-Studio-运行"><a href="#Android-Studio-运行" class="headerlink" title="Android Studio 运行"></a>Android Studio 运行</h2><p>首先运行虚拟机或者连接真机，然后点击 Android Studio 上方的绿色播放按钮即可。</p>
+<img src="/blog/2019/01/10/FlutterWin/runapp.png" class="" title="runapp">
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最終更新：<time datetime="2020-03-07T14:02:25.835Z" itemprop="dateUpdated">2020-03-07 22:02:25</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/blog/2019/01/10/FlutterWin/" target="_blank" rel="external">https://cirnobreak.github.io/2019/01/10/FlutterWin/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://cirnobreak.github.io">
+            <img src="/blog/img/avatar.jpg" alt="">
+            
+        </a>
+    </footer>
+</blockquote>
+
+        <!-- 
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+ -->
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Flutter/" rel="tag">Flutter</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/2019/01/20/MutationObserver/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">从B站弹幕列表加载来了解DOM观察者-MutationObserver</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2018/12/31/%E7%BB%84%E4%BB%B6%E5%A4%8D%E7%94%A8/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">从Mixins到hooks,浅谈React组件逻辑复用</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>このブログの内容物は<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja" target="_blank">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span> &copy; 2015 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: false, REWARD: true };
+
+
+</script>
+
+<script src="/blog/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/blog/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'true', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>vim学习之vimtutor笔记 | Welcome to my blog!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="笔记,vim">
+    <meta name="description" content="方向h(左移) j(下移) k(右移) l(右移)，也可以使用方向键。 进入跟退出进入: 输入 vim 文件名 &lt;回车&gt;。 退出:  保存并退出:输入 :wq! &lt;回车&gt;。 退出但不保存: 输入 :q! &lt;回车&gt;。  删除单个字符在正常模式下在光标所在位置按 x 可以删除光标所在位置单个字符。 插入&#x2F;添加 光标前插入: 输入 i。 当前行最后插入: 输入 A。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim学习之vimtutor笔记">
+<meta property="og:url" content="https://cirnobreak.github.io/2018/11/27/vim%E5%AD%A6%E4%B9%A0%E4%B9%8Bvimtutor%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Welcome to my blog!">
+<meta property="og:description" content="方向h(左移) j(下移) k(右移) l(右移)，也可以使用方向键。 进入跟退出进入: 输入 vim 文件名 &lt;回车&gt;。 退出:  保存并退出:输入 :wq! &lt;回车&gt;。 退出但不保存: 输入 :q! &lt;回车&gt;。  删除单个字符在正常模式下在光标所在位置按 x 可以删除光标所在位置单个字符。 插入&#x2F;添加 光标前插入: 输入 i。 当前行最后插入: 输入 A。">
+<meta property="article:published_time" content="2018-11-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-03-07T14:02:48.934Z">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="vim">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="Welcome to my blog!" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="/blog/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname"></h5>
+          <a href="mailto:" title="" class="mail"></a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives/"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags/"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories/"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/cirnobreak" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vim学习之vimtutor笔记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vim学习之vimtutor笔记</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-11-26T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-11-27
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/vim/">vim</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方向"><span class="post-toc-number">1.</span> <span class="post-toc-text">方向</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#进入跟退出"><span class="post-toc-number">2.</span> <span class="post-toc-text">进入跟退出</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#删除单个字符"><span class="post-toc-number">3.</span> <span class="post-toc-text">删除单个字符</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#插入-添加"><span class="post-toc-number">4.</span> <span class="post-toc-text">插入&#x2F;添加</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#计数指定动作"><span class="post-toc-number">5.</span> <span class="post-toc-text">计数指定动作</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#删除相关命令-与-d-有关"><span class="post-toc-number">6.</span> <span class="post-toc-text">删除相关命令(与 d 有关)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本操作"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">基本操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#计数删除"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">计数删除</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除整行"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">删除整行</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#撤销类命令"><span class="post-toc-number">7.</span> <span class="post-toc-text">撤销类命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#置入类命令"><span class="post-toc-number">8.</span> <span class="post-toc-text">置入类命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#替换类命令"><span class="post-toc-number">9.</span> <span class="post-toc-text">替换类命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#更改类命令"><span class="post-toc-number">10.</span> <span class="post-toc-text">更改类命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#定位以及文件状态"><span class="post-toc-number">11.</span> <span class="post-toc-text">定位以及文件状态</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#搜索类命令"><span class="post-toc-number">12.</span> <span class="post-toc-text">搜索类命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配对括号查找"><span class="post-toc-number">13.</span> <span class="post-toc-text">配对括号查找</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#替换命令"><span class="post-toc-number">14.</span> <span class="post-toc-text">替换命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#执行外部命令"><span class="post-toc-number">15.</span> <span class="post-toc-text">执行外部命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#保存改动到文件"><span class="post-toc-number">16.</span> <span class="post-toc-text">保存改动到文件</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#保存指定文本到文件"><span class="post-toc-number">17.</span> <span class="post-toc-text">保存指定文本到文件</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#提取并合并文件"><span class="post-toc-number">18.</span> <span class="post-toc-text">提取并合并文件</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#打开类命令"><span class="post-toc-number">19.</span> <span class="post-toc-text">打开类命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#复制粘贴文本"><span class="post-toc-number">20.</span> <span class="post-toc-text">复制粘贴文本</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#设置类命令"><span class="post-toc-number">21.</span> <span class="post-toc-text">设置类命令</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-vim学习之vimtutor笔记"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vim学习之vimtutor笔记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-11-27 00:00:00" datetime="2018-11-26T16:00:00.000Z"  itemprop="datePublished">2018-11-27</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/vim/">vim</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="方向"><a href="#方向" class="headerlink" title="方向"></a>方向</h1><p>h(左移) j(下移) k(右移) l(右移)，也可以使用方向键。</p>
+<h1 id="进入跟退出"><a href="#进入跟退出" class="headerlink" title="进入跟退出"></a>进入跟退出</h1><p>进入: 输入 vim 文件名 &lt;回车&gt;。</p>
+<p>退出:</p>
+<ol>
+<li>保存并退出:输入 :wq! &lt;回车&gt;。</li>
+<li>退出但不保存: 输入 :q! &lt;回车&gt;。</li>
+</ol>
+<h1 id="删除单个字符"><a href="#删除单个字符" class="headerlink" title="删除单个字符"></a>删除单个字符</h1><p>在正常模式下在光标所在位置按 x 可以删除光标所在位置单个字符。</p>
+<h1 id="插入-添加"><a href="#插入-添加" class="headerlink" title="插入/添加"></a>插入/添加</h1><ol>
+<li>光标前插入: 输入 i。</li>
+<li>当前行最后插入: 输入 A。</li>
+<li>在当前光标后插入: 输入 a。</li>
+</ol>
+<h1 id="计数指定动作"><a href="#计数指定动作" class="headerlink" title="计数指定动作"></a>计数指定动作</h1><p>比如:</p>
+<ol>
+<li>输入 2w 光标往后移动两个单词。</li>
+<li>输入 3e 光标往后移动到第三个单词的词尾。</li>
+<li>输入 0 移动光标到行首。</li>
+</ol>
+<h1 id="删除相关命令-与-d-有关"><a href="#删除相关命令-与-d-有关" class="headerlink" title="删除相关命令(与 d 有关)"></a>删除相关命令(与 d 有关)</h1><h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><p>许多改变文本的命令都由一个操作符和一个动作构成。使用删除操作符 d 的删除命令的格式如下:</p>
+<p>d motion</p>
+<p>其中 d 是删除操作符，motion 是操作符的操作对象,比如:</p>
+<ol>
+<li>删除从当前光标到下一个单词的起始处: 输入 dw。</li>
+<li>删除光标到单词末尾，包括最后一个字符: 输入 de。</li>
+<li>删除从当前光标到行末的所有字符: 输入 d$。</li>
+</ol>
+<h2 id="计数删除"><a href="#计数删除" class="headerlink" title="计数删除"></a>计数删除</h2><p>在删除操作符跟动作的组合中，在动作前加上一个数字可以删除更多:</p>
+<p>d number(数字) motion</p>
+<p>比如输入 d2w 可以删除两个单词。</p>
+<h2 id="删除整行"><a href="#删除整行" class="headerlink" title="删除整行"></a>删除整行</h2><ol>
+<li>输入 dd 可以删除当前行。</li>
+<li>输入 2dd 可以删除两行。</li>
+</ol>
+<h1 id="撤销类命令"><a href="#撤销类命令" class="headerlink" title="撤销类命令"></a>撤销类命令</h1><ol>
+<li>按下 u 可以恢复上一次操作。</li>
+<li>按下 U 可以恢复光标所在行的初始状态。</li>
+<li>按 CTRL+R 可以重做被撤销的命令，也就是撤销掉撤销命令。</li>
+</ol>
+<h1 id="置入类命令"><a href="#置入类命令" class="headerlink" title="置入类命令"></a>置入类命令</h1><p>p 可以把最后一次删除(复制)的内容置入光标之后。</p>
+<p>比如： 把一行移动到指定位置，可以先用 dd 命令删除该行，这样会将该行保存到 vim 的寄存器中，然后在光标所在行按下 p，会在光标后所在行的下一行粘贴置入。</p>
+<h1 id="替换类命令"><a href="#替换类命令" class="headerlink" title="替换类命令"></a>替换类命令</h1><ol>
+<li>在光标所在位置输入 r 和要替换的字符，就会把当前光标的内容替换成你要替换的内容。</li>
+<li>在光标所在位置输入 R 可以连续替换字符。</li>
+</ol>
+<h1 id="更改类命令"><a href="#更改类命令" class="headerlink" title="更改类命令"></a>更改类命令</h1><p>在光标所在位置，输入 cw 不仅可以删掉一个单词，同时可以进入插入模式。</p>
+<p>更改类操作命令如下:</p>
+<p>c [number] motion</p>
+<h1 id="定位以及文件状态"><a href="#定位以及文件状态" class="headerlink" title="定位以及文件状态"></a>定位以及文件状态</h1><ol>
+<li>按下 CTRL+G 可以显示光标所在行的位置以及文件状态信息。</li>
+<li>输入 G 可以跳到文件的最后一行，输入 gg 可以跳到文件的第一行。</li>
+</ol>
+<h1 id="搜索类命令"><a href="#搜索类命令" class="headerlink" title="搜索类命令"></a>搜索类命令</h1><ol>
+<li>输入 / 跟 要查找的字符串并按下 &lt;回车&gt;，比如: /errroor &lt;回车&gt;，可以在文件中找到你要找的字符串的位置。</li>
+<li>此时按 n 可以往下查找，按下 N 可以往上查找。</li>
+<li>如果是第一次逆向查找，使用? 代替 /即可。</li>
+<li>ctrl+o 可以回退到之前查找的位置，ctrl+i 可以跳到较新位置。</li>
+</ol>
+<h1 id="配对括号查找"><a href="#配对括号查找" class="headerlink" title="配对括号查找"></a>配对括号查找</h1><p>%可以跳转到匹配当前行离光标最近的括号({[或者)}] 对应匹配的)}]或者({[的位置。</p>
+<h1 id="替换命令"><a href="#替换命令" class="headerlink" title="替换命令"></a>替换命令</h1><ol>
+<li>在光标所在行，把头一个 old 替换成 new，输入 :s/old/new。</li>
+<li>在光标所在行，把所有 old 替换成 new，输入 :s/old/new/g。</li>
+<li>在光标所在处的两行内把所有的 old 替换成 new，输入 :#,#/old/new/g。</li>
+<li>把文件内所有的 old 替换成 new，输入 :%s/old/new/gc。</li>
+</ol>
+<h1 id="执行外部命令"><a href="#执行外部命令" class="headerlink" title="执行外部命令"></a>执行外部命令</h1><p>输入:!紧跟着外部命令就会执行该外部命令，比如:</p>
+<p>输入 :!ls 可以列举目录内容。</p>
+<h1 id="保存改动到文件"><a href="#保存改动到文件" class="headerlink" title="保存改动到文件"></a>保存改动到文件</h1><p>输入 :w 文件名就可以把当前文件另存为该文件名的文件。</p>
+<p>此时，如果想删除文件，可以使用如下命令:</p>
+<ol>
+<li>MS-DOC 下，输入 :!del 文件名。</li>
+<li>Unix 下，输入 :!rm 文件名。</li>
+</ol>
+<h1 id="保存指定文本到文件"><a href="#保存指定文本到文件" class="headerlink" title="保存指定文本到文件"></a>保存指定文本到文件</h1><p>按下 v 可以进入视图模式，然后移动光标选中文本会高亮，此时，输入 : 屏幕底部会出现:’&lt;,’&gt; 接着输入 w 文件名 会看到 :’&lt;,’&gt;w 文件名 ,按下&lt;回车&gt;后，将会把选中的文本保存当对应的文件下。</p>
+<h1 id="提取并合并文件"><a href="#提取并合并文件" class="headerlink" title="提取并合并文件"></a>提取并合并文件</h1><p>当光标所在位置，输入 :r 文件名 会把对应文件名的内容提取到当前位置并置入。</p>
+<h1 id="打开类命令"><a href="#打开类命令" class="headerlink" title="打开类命令"></a>打开类命令</h1><p>在光标处，输入 o 会在光标下方新建一行并进入插入模式，输入 O 则会往光标上方新建一行并进入插入模式。</p>
+<h1 id="复制粘贴文本"><a href="#复制粘贴文本" class="headerlink" title="复制粘贴文本"></a>复制粘贴文本</h1><p>输入 y 可以复制对应文本，输入 p 可以把复制的文本粘贴到光标后的位置。</p>
+<h1 id="设置类命令"><a href="#设置类命令" class="headerlink" title="设置类命令"></a>设置类命令</h1><p>输入 :set xxx 可以设置 xxx 选项。</p>
+<ol>
+<li>输入 :set ic,表示查找时忽略字母大小写(ignorecase)</li>
+<li>输入 :set is,表示查找短语时显示部分匹配(incsearch)</li>
+<li>输入 :set hls,表示高亮显示所有匹配短语(hlsearch)</li>
+<li>在选项前输入 no 可以关闭选项，比如 :set noic 可以取消忽略大小写查找</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最終更新：<time datetime="2020-03-07T14:02:48.934Z" itemprop="dateUpdated">2020-03-07 22:02:48</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/blog/2018/11/27/vim%E5%AD%A6%E4%B9%A0%E4%B9%8Bvimtutor%E7%AC%94%E8%AE%B0/" target="_blank" rel="external">https://cirnobreak.github.io/2018/11/27/vim%E5%AD%A6%E4%B9%A0%E4%B9%8Bvimtutor%E7%AC%94%E8%AE%B0/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://cirnobreak.github.io">
+            <img src="/blog/img/avatar.jpg" alt="">
+            
+        </a>
+    </footer>
+</blockquote>
+
+        <!-- 
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+ -->
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/vim/" rel="tag">vim</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/2018/12/31/%E7%BB%84%E4%BB%B6%E5%A4%8D%E7%94%A8/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">从Mixins到hooks,浅谈React组件逻辑复用</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2018/08/30/vue%E5%90%8C%E6%97%B6%E4%BD%BF%E7%94%A8@keyup.enter%E4%B8%8E@blur%E5%86%B2%E7%AA%81/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Vue同时使用@keyup.enter与@blur冲突</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>このブログの内容物は<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja" target="_blank">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span> &copy; 2015 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: false, REWARD: true };
+
+
+</script>
+
+<script src="/blog/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/blog/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'true', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>css盒模型 | Welcome to my blog!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="笔记,css">
+    <meta name="description" content="参考:  《精通 css》第 3 章 W3school: CSS 外边距合并 W3school: CSS 定位 (Positioning) w3plus: CSS3 Box-sizing  盒模型标准盒模型(padding-box): width&#x2F;height &#x3D; 内容部分IE 的盒模型(border-box): width&#x2F;height &#x3D; 内容部分 + padding * 2   外边距叠加">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css盒模型">
+<meta property="og:url" content="https://cirnobreak.github.io/2017/11/11/%E7%9B%92%E6%A8%A1%E5%9E%8B/index.html">
+<meta property="og:site_name" content="Welcome to my blog!">
+<meta property="og:description" content="参考:  《精通 css》第 3 章 W3school: CSS 外边距合并 W3school: CSS 定位 (Positioning) w3plus: CSS3 Box-sizing  盒模型标准盒模型(padding-box): width&#x2F;height &#x3D; 内容部分IE 的盒模型(border-box): width&#x2F;height &#x3D; 内容部分 + padding * 2   外边距叠加">
+<meta property="og:image" content="https://cirnobreak.github.io/blog/2017/11/11/%E7%9B%92%E6%A8%A1%E5%9E%8B/box-model-layout.png">
+<meta property="og:image" content="https://cirnobreak.github.io/blog/2017/11/11/%E7%9B%92%E6%A8%A1%E5%9E%8B/ct_css_margin_collapsing_example_1.gif">
+<meta property="og:image" content="https://cirnobreak.github.io/blog/2017/11/11/%E7%9B%92%E6%A8%A1%E5%9E%8B/ct_css_margin_collapsing_example_2.gif">
+<meta property="og:image" content="https://cirnobreak.github.io/blog/2017/11/11/%E7%9B%92%E6%A8%A1%E5%9E%8B/ct_css_margin_collapsing_example_3.gif">
+<meta property="og:image" content="https://cirnobreak.github.io/blog/2017/11/11/%E7%9B%92%E6%A8%A1%E5%9E%8B/ct_css_margin_collapsing_example_4.gif">
+<meta property="article:published_time" content="2017-11-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-03-07T14:01:50.836Z">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="css">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cirnobreak.github.io/blog/2017/11/11/%E7%9B%92%E6%A8%A1%E5%9E%8B/box-model-layout.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Welcome to my blog!" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="/blog/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname"></h5>
+          <a href="mailto:" title="" class="mail"></a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives/"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags/"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories/"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/cirnobreak" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">css盒模型</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">css盒模型</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-11-10T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2017-11-11
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/css/">css</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#盒模型"><span class="post-toc-number">1.</span> <span class="post-toc-text">盒模型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#外边距叠加"><span class="post-toc-number">2.</span> <span class="post-toc-text">外边距叠加</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#定位"><span class="post-toc-number">3.</span> <span class="post-toc-text">定位</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一切皆为框"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">一切皆为框</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#定位机制"><span class="post-toc-number">4.</span> <span class="post-toc-text">定位机制</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#相对定位"><span class="post-toc-number">5.</span> <span class="post-toc-text">相对定位</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#绝对定位"><span class="post-toc-number">6.</span> <span class="post-toc-text">绝对定位</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#绝对定位位置的确定"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">绝对定位位置的确定</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#固定定位"><span class="post-toc-number">7.</span> <span class="post-toc-text">固定定位</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#浮动"><span class="post-toc-number">8.</span> <span class="post-toc-text">浮动</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#行框和清除"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">行框和清除</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用伪类清除浮动"><span class="post-toc-number">8.1.1.</span> <span class="post-toc-text">使用伪类清除浮动</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-盒模型"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">css盒模型</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-11-11 00:00:00" datetime="2017-11-10T16:00:00.000Z"  itemprop="datePublished">2017-11-11</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/css/">css</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>参考:</p>
+<blockquote>
+<p>《精通 css》第 3 章<br> W3school: <a href="http://www.w3school.com.cn/css/css_margin_collapsing.asp" target="_blank" rel="noopener">CSS 外边距合并</a><br> W3school: <a href="http://www.w3school.com.cn/css/css_positioning.asp" target="_blank" rel="noopener">CSS 定位 (Positioning)</a><br> w3plus: <a href="http://www.w3cplus.com/content/css3-box-sizing" target="_blank" rel="noopener">CSS3 Box-sizing</a></p>
+</blockquote>
+<h1 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h1><p>标准盒模型(padding-box): width/height = 内容部分<br>IE 的盒模型(border-box): width/height = 内容部分 + padding * 2</p>
+<img src="/blog/2017/11/11/%E7%9B%92%E6%A8%A1%E5%9E%8B/box-model-layout.png" class="" title="box-model-layout">
+
+<h1 id="外边距叠加"><a href="#外边距叠加" class="headerlink" title="外边距叠加"></a>外边距叠加</h1><ol>
+<li>当一个元素出现在另一个元素的上面时，第一个元素的底外边距与第二个元素的顶外边距发生叠加:<img src="/blog/2017/11/11/%E7%9B%92%E6%A8%A1%E5%9E%8B/ct_css_margin_collapsing_example_1.gif" class="" title="ct_css_margin_collapsing_example_1"></li>
+<li>当一个元素包含在另一个元素中时(假设没有内边距或者边框将外边距分隔开),他们的顶或底外边距也会发生叠加:<img src="/blog/2017/11/11/%E7%9B%92%E6%A8%A1%E5%9E%8B/ct_css_margin_collapsing_example_2.gif" class="" title="ct_css_margin_collapsing_example_2"></li>
+<li>外边距甚至可以与本身发生叠加。假如有一个空元素，他有外边距，但没有边框或者内边距，在这种情况下，顶外边距与底外边距就碰到一起，会发生叠加:<img src="/blog/2017/11/11/%E7%9B%92%E6%A8%A1%E5%9E%8B/ct_css_margin_collapsing_example_3.gif" class="" title="ct_css_margin_collapsing_example_3">
+如果这个外边框碰到另一个元素的外边距，还会发生叠加:<img src="/blog/2017/11/11/%E7%9B%92%E6%A8%A1%E5%9E%8B/ct_css_margin_collapsing_example_4.gif" class="" title="ct_css_margin_collapsing_example_4">
+
+</li>
+</ol>
+<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><h2 id="一切皆为框"><a href="#一切皆为框" class="headerlink" title="一切皆为框"></a>一切皆为框</h2><p><code>div、h1</code> 或 <code>p</code> 元素常常被称为块级元素。这意味着这些元素显示为一块内容，即“块框”。与之相反，<code>span</code> 和 <code>strong</code> 等元素称为“行内元素”，这是因为它们的内容显示在行中，即“行内框”。<br>把<code>display</code>设置为<code>block</code>可以让行内元素(比如<code>a</code>)变得跟块级元素一样；<code>display</code>设置为<code>none</code>可以让生成的元素没有框，框及其所有内容不再显示，不占用文档空间；把<code>display</code>设置为<code>inline-block</code>可以让元素像行内元素一样水平地依次排列，但框的内容依然符合块级框的行为，例如能够显式地设置宽度、高度、垂直外边距和内边框。</p>
+<h1 id="定位机制"><a href="#定位机制" class="headerlink" title="定位机制"></a>定位机制</h1><p>CSS 中有三种基本定位机制:<strong>普通流、浮动和绝对定位</strong>。除非专门指定，否则所有框都在普通流定位。<br>行内框在一行中水平布置。可以使用水平内边距、边框和外边距调整它们的间距。但是，垂直内边距、边框和外边距不影响行内框的高度。由一行形成的水平框称为行框（<code>Line Box</code>），行框的高度总是足以容纳它包含的所有行内框。不过，设置行高可以增加这个框的高度</p>
+<h1 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h1><p><code>position</code>设置为<code>relative</code>，通过指定<strong>垂直或者水平位置</strong>，让这个元素“相对于”他的起点位置移动。比如<code>left</code>设置为<code>20px</code>会在元素左边创建<code>20px</code>的空间，也就是元素向右移动。使用相对定位的时候，<strong>无论是否移动，元素仍然占据空间</strong>，移动会导致它覆盖其他框。</p>
+<h1 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h1><p><code>position</code>设置为<code>absolute</code>,相对定位实际上被看做普通流定位模型的一部分，因为元素的位置是相对于它在普通流的位置中。绝对定位使得元素位置与文档流无关，因此<strong>不占据空间</strong>。普通流文档流中其他元素的布局就像绝对定位的元素不存在时一样。</p>
+<h2 id="绝对定位位置的确定"><a href="#绝对定位位置的确定" class="headerlink" title="绝对定位位置的确定"></a>绝对定位位置的确定</h2><p>相对于距离它最近的那个<strong>已定位的祖先元素</strong>确定的，如果元素没有已存在的祖先元素，那么它的位置是相对于初始包含块的。根据用户代理不同，初始包含快可能是画布或者 HTML 元素。<br>绝对定位不影响普通流的框，如果扩大绝对定位的框(比如通过增加字号)，周围的框不会重新定位。因此，尺寸的任何改变都会导致绝对定位发生重叠，从而破坏布局。</p>
+<h1 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h1><p><code>position</code>设置为<code>fixed</code>，是<strong>绝对定位的一种</strong>，差异在于固定元素的包含块是视口(<code>viewport</code>)，即使页面滚动也会一直出现在屏幕的固定位置。</p>
+<h1 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h1><p>浮动的框可以左右移动，直到他的外边缘碰到包含框或者另一个浮动的框的边缘。因为浮动框不在文档的普通流中，所以文档的普通流中的块框表现得就像浮动框不存在一样。</p>
+<h2 id="行框和清除"><a href="#行框和清除" class="headerlink" title="行框和清除"></a>行框和清除</h2><p>如果浮动元素后面有一个文档流中的元素，那么这个元素的框会表现得像浮动一样根本不存在一样。但是，框的文本内容会受到浮动元素的影响，会移动以留出空间。实际上，创建浮动框使文本可以围绕图像。<br>想要阻止行框围绕在浮动框的外边，需要对元素设置<code>clear</code>属性。<code>clear</code>属性的值可以是<code>left、right、both</code>或者<code>none</code>。<br>因为浮动元素不占据空间，所以容器元素不能包含他们。添加一个进行清空的空元素(设置<code>clear</code>)可以迫使容器元素<strong>包围浮动元素</strong>(<strong>撑大</strong>)。</p>
+<h3 id="使用伪类清除浮动"><a href="#使用伪类清除浮动" class="headerlink" title="使用伪类清除浮动"></a>使用伪类清除浮动</h3><p>一些人使用 CSS 生成的内容或者 JavaScript 对浮动元素进行清理。对于这两种方法，需要指定清理的元素应该出现在哪里，通常需要加一个类名，比如:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"news clear"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"xx.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Some text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>结合使用:after 伪类和内容声明在指定的现有内容的末尾添加内容。假如，不希望新内容占据垂直空间或者在页面上显示，需要将 height 设置为 0，将 visibility 设置为 hidden，因为被清理的元素在他们的顶外边距添加了空间，所以生成的内容需要将它的 display 设置为 block。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clear</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">visibility</span>: hidden;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最終更新：<time datetime="2020-03-07T14:01:50.836Z" itemprop="dateUpdated">2020-03-07 22:01:50</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/blog/2017/11/11/%E7%9B%92%E6%A8%A1%E5%9E%8B/" target="_blank" rel="external">https://cirnobreak.github.io/2017/11/11/%E7%9B%92%E6%A8%A1%E5%9E%8B/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://cirnobreak.github.io">
+            <img src="/blog/img/avatar.jpg" alt="">
+            
+        </a>
+    </footer>
+</blockquote>
+
+        <!-- 
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+ -->
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/" rel="tag">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/2017/11/27/%E7%BB%84%E4%BB%B6/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">React组件</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2017/11/11/%E9%80%89%E6%8B%A9%E5%99%A8/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">css选择器</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>このブログの内容物は<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja" target="_blank">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p><span> &copy; 2015 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: false, REWARD: true };
+
+
+</script>
+
+<script src="/blog/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/blog/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
