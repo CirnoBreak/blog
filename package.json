@@ -5,6 +5,7 @@
     "start": "dumi dev",
     "build": "dumi build",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "clean": "rimraf dist",
     "commit": "git-cz"
   },
   "main": "dist/index.js",
@@ -27,6 +28,7 @@
     "dumi": "^1.0.12",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
+    "rimraf": "^3.0.2",
     "yorkie": "^2.0.0"
   },
   "config": {
